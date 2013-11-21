@@ -1,0 +1,12 @@
+doctype 5
+html
+
+    head
+        title Adapt Plugins
+    body
+        #wrapper
+            h1 Adapt Plugins
+            #content
+                for plugin, i in plugins
+                    div.plugins
+                        a(href='/'+plugin.name) - #{plugin.name}
