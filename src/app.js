@@ -2,8 +2,9 @@ var express = require('express');
 var http = require('http');
 var app = express();
 var _ = require('underscore');
-var pluginRequest = require('./bin/pluginRequest');
-var githubRequest = require('./bin/githubRequest');
+/*var pluginRequest = require('./lib/pluginRequest');
+var githubRequest = require('./lib/githubRequest');*/
+var plugins = require('./lib/getPlugins');
 
 app.set('view engine', 'jade');
 app.set('views', './views');
@@ -15,11 +16,16 @@ app.locals.pretty = true;
 
 
 app.get('/', function(req, res) {
-    var plugins = _.sortBy(pluginRequest.plugins, function(plugin){ return plugin.name; });
-    res.render('index', {plugins: plugins});
+    res.render('index');
 });
 
-app.get('/:id', function(req, res, next) {
+app.get('/api/plugins', function(req, res) {
+    plugins.getPlugins(function(plugins) {
+        res.json(plugins)
+    });
+});
+
+/*app.get('/api/plugins/:id', function(req, res, next) {
     var currentPlugin = _.findWhere(pluginRequest.plugins, {name:req.params.id});
     if (currentPlugin != undefined) {
         var currentUser = currentPlugin.url.split('/')[3];
@@ -35,12 +41,12 @@ app.get('/:id', function(req, res, next) {
     }
 });
 
-app.get('/starred', function(req, res) {
+app.get('/api/starred', function(req, res) {
     var starredPlugins = _.sortBy(pluginRequest.plugins, function(plugin){ return -plugin.hits; });
     console.log(starredPlugins);
     //var starredPlugins = _.findWhere(pluginRequest.plugins, {name:req.params.id});
     res.render('starred', {plugins: starredPlugins});
-});
+});*/
 
 http.createServer(app).listen(3030, function() {
     console.log('app running');
