@@ -48,6 +48,6 @@ app.get('/api/starred', function(req, res) {
     res.render('starred', {plugins: starredPlugins});
 });*/
 
-http.createServer(app).listen(3030, function() {
+http.createServer(app).listen(4000, function() {
     console.log('app running');
 })

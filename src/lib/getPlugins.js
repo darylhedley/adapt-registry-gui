@@ -54,7 +54,7 @@ var findGithubAccount = function(callback) {
         jsonData[pluginCount].watchers = response.watchers;
         jsonData[pluginCount].subscribers_count = response.subscribers_count;
         pluginCount ++;
-        if (pluginCount < pluginLength-1) {
+        if (pluginCount < pluginLength) {
             var currentUser = jsonData[pluginCount].url.split('/')[3];
             var currentPluginName = jsonData[pluginCount].name;
             findGithubAccount(callback);
@@ -67,11 +67,23 @@ var findGithubAccount = function(callback) {
 
 
 var getGithubDetail = function(user, repo, callback) {
+    console.log(user, repo);
     github.repos.get({
         user: user,
         repo: repo 
     }, function(err, response) {
-        console.log('respy', response);
+        if (err) {
+            console.log('getting error')
+            return callback({
+                stargazers_count:undefined,
+                html_url:undefined,
+                description:undefined,
+                open_issues_count:undefined,
+                open_issues:undefined,
+                watchers:undefined,
+                subscribers_count:undefined
+            })
+        }
         return callback(response);
     });
 }
