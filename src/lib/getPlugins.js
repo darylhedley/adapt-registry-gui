@@ -14,7 +14,7 @@ var github = new GitHubApi({
     // required
     version: "3.0.0",
     // optional
-    timeout: 8000
+    timeout: 1000
 });
 
 var getPlugins = function(callback) {
