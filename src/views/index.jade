@@ -3,10 +3,9 @@ html
 
     head
         title Adapt Plugins
+        link(rel='stylesheet', href='/css/adapt-registry.css')
+        script(src='/js/libraries/modernizr.js')
+        script(src='/js/scriptLoader.js')
     body
         #wrapper
-            h1 Adapt Plugins
-            #content
-                for plugin, i in plugins
-                    div.plugins
-                        a(href='/'+plugin.name) - #{plugin.name}
+            .loading Loading plugins. Please wait
