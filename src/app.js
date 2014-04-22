@@ -13,15 +13,13 @@ app.use(app.router);
 app.use(express.static('./public'));
 app.locals.pretty = true;
 
-
-
 app.get('/', function(req, res) {
     res.render('index');
 });
 
 app.get('/api/plugins', function(req, res) {
     plugins.getPlugins(function(plugins) {
-        res.json(plugins)
+        res.json(plugins);
     });
 });
 

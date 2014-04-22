@@ -14,7 +14,10 @@ define(["backbone", "js/hub", "views/pluginsView", "views/pluginView"], function
         
         routes: {
             "":"index",
-            "plugin/:id":"handlePlugin"
+            "plugin/:id":"handlePlugin",
+            "most-used":"handleMostUsed",
+            "most-starred":"handleMostStarred",
+            "most-watched":"handleMostWatched"
         },
         
         index: function() {
@@ -28,6 +31,36 @@ define(["backbone", "js/hub", "views/pluginsView", "views/pluginView"], function
             var currentPlugin = Hub.plugins.findWhere({name:name});
             console.log(currentPlugin)
             new PluginView({model: currentPlugin});
+        },
+        
+        handleMostUsed: function() {
+            this.removeViews();
+            var sortedModels = Hub.plugins.sortBy(function(model){ 
+                return -model.get('hits');
+            }, this);
+            
+            var sortedCollection = new Backbone.Collection(sortedModels);
+            new PluginsView({collection:sortedCollection});
+        },
+        
+        handleMostStarred: function() {
+            this.removeViews();
+            var sortedModels = Hub.plugins.sortBy(function(model){ 
+                return -model.get('stargazers_count');
+            }, this);
+            
+            var sortedCollection = new Backbone.Collection(sortedModels);
+            new PluginsView({collection:sortedCollection});
+        },
+        
+        handleMostWatched: function() {
+            this.removeViews();
+            var sortedModels = Hub.plugins.sortBy(function(model){ 
+                return -model.get('watchers');
+            }, this);
+            
+            var sortedCollection = new Backbone.Collection(sortedModels);
+            new PluginsView({collection:sortedCollection});
         },
         
         removeViews: function() {

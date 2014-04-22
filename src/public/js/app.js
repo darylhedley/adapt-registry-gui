@@ -54,6 +54,7 @@ require([
     
     Hub.once('plugins:loaded', function() {
         console.log('plugins loaded');
+        $('.loading').fadeOut();
         Backbone.history.start();
     });
     

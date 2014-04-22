@@ -7,7 +7,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   
 
 
-  return "<div class=\"navigation-inner\">\n    <a href=\"#\">Plugins</a>\n    <a href=\"#/most-used\">Most used</a>\n    <a href=\"#/most-starred\">Most starred</a>\n</div>";
+  return "<div class=\"navigation-inner\">\n    <a href=\"#\">Plugins</a>\n    <a href=\"#/most-used\">Most used</a>\n    <a href=\"#/most-starred\">Most starred</a>\n    <a href=\"#/most-watched\">Most watched</a>\n</div>";
   });
 
 this["Handlebars"]["templates"]["plugin"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
@@ -20,7 +20,11 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   if (stack1 = helpers.name) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.name; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
-    + "</div>\n        <div class=\"plugin-hits\">";
+    + "</div>\n        <div class=\"plugin-description\">\n        	";
+  if (stack1 = helpers.description) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
+  else { stack1 = depth0.description; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
+  buffer += escapeExpression(stack1)
+    + "\n        </div>\n        <div class=\"plugin-hits\">";
   if (stack1 = helpers.hits) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.hits; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
