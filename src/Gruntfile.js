@@ -5,7 +5,7 @@ module.exports = function(grunt) {
         less: {
             dist: {
                 files: {
-                        'public/css/adapt-registry.css' : 'public/css/*.less'
+                        'public/css/adapt-registry.css' : 'public/less/*.less'
                 }
             },
             options:{
@@ -30,7 +30,7 @@ module.exports = function(grunt) {
             }
         },
         watch: {
-            files: ['public/css/*.less', 'public/templates/*.hbs'],
+            files: ['public/less/*.less', 'public/templates/*.hbs'],
             tasks: ['less', 'handlebars']
         }
     });

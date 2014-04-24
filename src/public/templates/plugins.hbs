@@ -1,8 +1,17 @@
 {{#each plugins}}
 <div class="plugin">
     <div class="plugin-inner">
-        <a href="#/plugin/{{name}}">{{name}}</a>
-        <div>{{hits}}</div>
+    	<div class="plugin-type-icon icon-paint-format"></div>
+        <div class="plugin-name">{{name}}</div>
+        <div class="plugin-description">
+        	{{description}}
+        </div>
+        <div class="plugin-hits">{{hits}}</div>
+        <div class="plugin-stars">{{stargazers_count}}</div>
+        <a class="plugin-git">{{url}}</a>
+        <div class="plugin-created">{{createdAt}}</div>
+        <div class="plugin-updated">{{updatedAt}}</div>
+        <a href="{{html_url}}" target="_blank" class="plugin-url">{{html_url}}</a>
     </div>    
 </div>
 {{/each}}
