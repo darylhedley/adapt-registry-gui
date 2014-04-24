@@ -22,7 +22,7 @@ define([
         url:'api/plugins',
         
         collectionLoaded: function() {
-            console.log(this);
+            console.log('collection', this);
             Hub.trigger('plugins:loaded');
         }
         
