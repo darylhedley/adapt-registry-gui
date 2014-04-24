@@ -47,7 +47,8 @@ var getPlugins = function(callback) {
 
 var getGithubDetail = function(callback) {
     var pluginLength = jsonData.length;
-    var pluginCount = 0;
+    var githubDetailsCount = 0;
+    var bowerDetailsCount = 0;
     _.each(jsonData, function(plugin, index) {
         var currentUser = plugin.url.split('/')[3];
         var currentPluginName = plugin.name;
@@ -55,7 +56,7 @@ var getGithubDetail = function(callback) {
             user: currentUser,
             repo: currentPluginName 
         }, function(err, response) {
-            pluginCount++;
+            githubDetailsCount++;
             if (err) {
                 jsonData[index].stargazers_count = undefined;
                 jsonData[index].html_url = undefined;
@@ -74,15 +75,46 @@ var getGithubDetail = function(callback) {
                 jsonData[index].watchers = response.watchers;
                 jsonData[index].subscribers_count = response.subscribers_count;
             }
-            if (pluginCount === pluginLength) {
+            if (githubDetailsCount === pluginLength && bowerDetailsCount === pluginLength) {
+                return callback(jsonData);
+            }
+
+        });
+
+        github.repos.getContent({
+            user: currentUser,
+            repo: currentPluginName,
+            path:"bower.json"
+        }, function(err, response) {
+            bowerDetailsCount++;
+            if (err) {
+                jsonData[index].type = undefined;
+            } else {
+                if (response) {
+                    var decodedJSON = new Buffer(response.content, 'base64').toString('utf8');
+                    var parsedJSON = JSON.parse(decodedJSON);
+                    var type;
+                    if (_.contains(parsedJSON.keywords, 'adapt-extension')) {
+                        type = 'extension';
+                    } else if (_.contains(parsedJSON.keywords, 'adapt-theme')) {
+                        type = 'theme';
+                    } else if (_.contains(parsedJSON.keywords, 'adapt-menu')) {
+                        type = 'menu';
+                    } else if (_.contains(parsedJSON.keywords, 'adapt-component')) {
+                        type = 'component';
+                    }
+                    jsonData[index].type = type;
+                } else {
+                    console.log("This plugin doesn't have a bower.json file", pluginName);
+                }
+            }
+            if (githubDetailsCount === pluginLength && bowerDetailsCount === pluginLength) {
                 return callback(jsonData);
             }
 
         });
 
     });
-
-    
 
 }
 
