@@ -38,6 +38,7 @@ var getPlugins = function(callback) {
         
         response.on('end', function() {
             jsonData = JSON.parse(body); 
+            //jsonData = {};
             getGithubDetail(callback);           
         });
         

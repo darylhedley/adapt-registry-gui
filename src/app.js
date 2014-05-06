@@ -12,16 +12,10 @@ if (!fs.existsSync('config/config.json')) {
 
 var plugins = require('./lib/getPlugins');
 
-app.set('view engine', 'jade');
-app.set('views', './views');
-
 app.use(app.router);
-app.use(express.static('./public'));
+app.use('/', express.static(__dirname + '/public'));
+//app.use(express.static('./public'));
 app.locals.pretty = true;
-
-app.get('/', function(req, res) {
-    res.render('index');
-});
 
 app.get('/api/plugins', function(req, res) {
     plugins.getPlugins(function(plugins) {

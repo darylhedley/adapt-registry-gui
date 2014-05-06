@@ -1,54 +1,124 @@
+
+.plugins {
+    position: relative;
+    max-width: 998px;
+    margin: 0 auto;
+}
+
 .plugin {
 	position: relative;
 	float: left;
-	width: 40%;
-	margin: 5%;
+	margin-top: 10px;
+	width: 33%;
+	@media all and (max-width: 760px) {
+		width: 50%; 
+	}
+	@media all and (max-width: 520px) {
+		width: 100%; 
+		margin-top: 0;
+	}
+	&:hover {
+		.plugin-type-icon {
+			font-size: 44px;
+			margin-top: -22px;
+			margin-left: -22px;
+		}
+		.plugin-type-tab {
+			background-color: darken(#0088CC, 20%)
+		}
+	}
 }
 
 .plugin-inner {
 	position: relative;
-	padding: 20px;
-	background-color: #53bbb4;
-	text-align: center;
+	margin: 10px;
+	height: 316px;
+}
+
+.plugin-type-tab {
+	position: relative;
+	transition: background-color 0.8s ease;
+	background-color: #0088CC;
+	height: 94px;
+	border-radius: 20px 20px 0 0;
+}
+
+.plugin-body-holder {
+	height: 222px;
+	position: relative;
+	background-color: #fff;	
 	color: #fff;
-	border-radius: 20px;
+	border-radius: 0 0 20px 20px;
+}
+
+.plugin-type {
+	border: 2px solid #fff;
+	width: 70px;
+	height: 70px;
+	background-color: transparent;
+	border-radius: 50px;
+	position: absolute;
+	left: 50%;
+	margin-left: -37px;
+	top: 10px;	
 }
 
 .plugin-type-icon {
 	position: absolute;
-	width: 100px;
-	height: 100px;
-	right: 50%;
-	margin-right: -50px;
-	border: 2px solid #fff;
-	border-radius: 50px;
-	
+	font-size: 34px;
+	color: white;
+	top: 50%;
+	left: 50%;
+	margin-top: -17px;
+	margin-left: -17px;
 }
 
 .plugin-name {
-	font-size: 25px;
-	font-weight: bold;
-	padding: 10px;
+	font-size: 18px;
+	padding: 20px 10px 10px 10px;
+	color: #434A54;
+	text-align: center;
 }
 
 .plugin-description {
-	font-size: 15px;
-	padding: 10px;
+	font-size: 12px;
+	padding: 10px 30px 80px 30px;
+	color: #656D78;
+	text-align: center;
 
 }
 
-.plugin-hits {
-
+.plugin-hits, .plugin-stars{
+	position: absolute;
+	font-size: 18px;
+	color: #fff;
+	top: 20px;
+	left: 20px;
 }
 
 .plugin-stars {
-
+	top: 50px;
+	left: 20px;
 }
 
-.plugin-git {
-
+.git-hub-author {
+	position: absolute;
+	color: #434A54; 
+	font-size: 12px;
+	bottom: 25px;
+	left: 20px;
 }
 
-.plugin-url {
-
+.git-hub-link {
+	right: 20px;
+	bottom: 20px;
+	position: absolute;
+	color: #434A54; 
+	font-size: 12px;
+	padding: 5px;
+	border: 1px solid #000;
+	&:hover {
+		cursor: pointer;
+	}
 }
+	

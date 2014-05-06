@@ -1,17 +1,25 @@
 {{#each plugins}}
-<div class="plugin">
+<div class="plugin {{type}}">
     <div class="plugin-inner">
-    	<div class="plugin-type-icon icon-paint-format"></div>
-        <div class="plugin-name">{{name}}</div>
-        <div class="plugin-description">
-        	{{description}}
+        <div class="plugin-type-tab">
+        	<div class="plugin-type">
+                <div class="plugin-type-icon icon-powercord"></div>   
+            </div>
+            <div class="plugin-hits icon-uniE600"> {{hits}}</div>
+            <div class="plugin-stars icon-share"> {{stargazers_count}}</div>
         </div>
-        <div class="plugin-hits">{{hits}}</div>
-        <div class="plugin-stars">{{stargazers_count}}</div>
-        <a class="plugin-git">{{url}}</a>
-        <div class="plugin-created">{{createdAt}}</div>
-        <div class="plugin-updated">{{updatedAt}}</div>
-        <a href="{{html_url}}" target="_blank" class="plugin-url">{{html_url}}</a>
+        <div class="plugin-body-holder">
+            <div class="plugin-name">{{name}}</div>
+            <div class="plugin-description">
+            	{{description}}
+            </div>
+            {{!--<a class="plugin-git">{{url}}</a>
+            <a href="{{html_url}}" target="_blank" class="plugin-url">{{html_url}}</a>--}}
+            <div class="git-hub-footer">
+                <div class="git-hub-author">Git Hub Author</div>
+                <a href="{{html_url}}" class="git-hub-link">GitHub</a>
+            </div>
+        </div>
     </div>    
 </div>
 {{/each}}

@@ -41,16 +41,21 @@ require.config({
 });
 
 require([
-    "views/navigationView",
+    "views/globalFiltersView",
+    "views/typeFiltersView",
+    "views/toggleFiltersView",
     "js/plugins",
     "js/hub",
     "js/router",
     "handlebars"
-], function (NavigationView, Plugins, Hub, Router) {
+], function (GlobalFiltersView, TypeFiltersView, ToggleFiltersView, Plugins, Hub, Router) {
     console.log('Running');
     
     new Router();
-    new NavigationView();
+    //new NavigationView();
+    new GlobalFiltersView();
+    new TypeFiltersView();
+    new ToggleFiltersView();
     
     Hub.once('plugins:loaded', function() {
         console.log('plugins loaded');
