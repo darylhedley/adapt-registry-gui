@@ -43,6 +43,47 @@
 	border-radius: 20px 20px 0 0;
 }
 
+.plugin.theme {
+	.plugin-type-tab {
+		background-color: #FC6E51;
+	}
+	&:hover {
+		.plugin-type-tab {
+			background-color: darken(#FC6E51, 20%);
+		}
+	}
+}
+.plugin.extension {
+	.plugin-type-tab {
+		background-color: #AC92EC;
+	}
+	&:hover {
+		.plugin-type-tab {
+			background-color: darken(#AC92EC, 20%);
+		}
+	}
+}
+.plugin.component {
+	.plugin-type-tab {
+		background-color: #FFCE54;
+	}
+	&:hover {
+		.plugin-type-tab {
+			background-color: darken(#FFCE54, 20%);
+		}
+	}
+}
+.plugin.menu {
+	.plugin-type-tab {
+		background-color: #48CFAD;
+	}
+	&:hover {
+		.plugin-type-tab {
+			background-color: darken(#48CFAD, 20%);
+		}
+	}
+}
+
 .plugin-body-holder {
 	height: 222px;
 	position: relative;
@@ -52,7 +93,7 @@
 }
 
 .plugin-type {
-	border: 2px solid #fff;
+	border: 3px solid #fff;
 	width: 70px;
 	height: 70px;
 	background-color: transparent;
@@ -112,13 +153,23 @@
 .git-hub-link {
 	right: 20px;
 	bottom: 20px;
+	width: 75px;
 	position: absolute;
-	color: #434A54; 
-	font-size: 12px;
+	color: #fff; 
+	font-size: 18px;
 	padding: 5px;
-	border: 1px solid #000;
+	background-color: #656D78;
+	border-radius: 5px;
+	text-decoration: none;
 	&:hover {
 		cursor: pointer;
+		background-color: #0088CC;
 	}
+}	
+
+.git-hub-link-inner {
+	font-size: 16px;
+	position: absolute;
+	top: 5px;
+	right: 5px;
 }
-	

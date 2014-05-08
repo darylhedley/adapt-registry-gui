@@ -16,9 +16,9 @@ define(["backbone", "handlebars", "js/hub", "templates"], function(Backbone, Han
             this.$el.html(template({plugins:data})).appendTo("#wrapper");
             return this;
         }
-    
+
     });
-    
+
     return PluginsView;
 
 });

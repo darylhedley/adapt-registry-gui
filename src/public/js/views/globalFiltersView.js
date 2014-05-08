@@ -7,7 +7,7 @@ define(function(require) {
 	var GlobalFiltersView = Backbone.View.extend({
 
 		el:".global-filters",
-    
+
         initialize: function() {
         	this.listenTo(Hub, 'filters:hide', this.hideFilter);
         	this.listenTo(Hub, 'filters:show', this.showFilter);

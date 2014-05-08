@@ -38,12 +38,14 @@ define(function(require) {
 			this.$el.removeClass('display-none');
 		},
 
-		filterAll: function() {
+		filterAll: function(event) {
+			event.preventDefault();
 			console.log('filter-all');
 			$('.plugin').removeClass('display-none');
 		},
 
-		filterThemes: function() {
+		filterThemes: function(event) {
+			event.preventDefault();
 			console.log('filter-themes');
 			$('.plugin')
 				.removeClass('display-none')
@@ -51,7 +53,8 @@ define(function(require) {
 				.addClass('display-none');
 		},
 
-		filterExtensions: function() {
+		filterExtensions: function(event) {
+			event.preventDefault();
 			console.log('filter-extensions');
 			$('.plugin')
 				.removeClass('display-none')
@@ -59,7 +62,8 @@ define(function(require) {
 				.addClass('display-none');
 		},
 
-		filterComponents: function() {
+		filterComponents: function(event) {
+			event.preventDefault();
 			console.log('filter-components');
 			$('.plugin')
 				.removeClass('display-none')
@@ -67,7 +71,8 @@ define(function(require) {
 				.addClass('display-none');
 		},
 
-		filterMenus: function() {
+		filterMenus: function(event) {
+			event.preventDefault();
 			console.log('filter-menus');
 			$('.plugin')
 				.removeClass('display-none')

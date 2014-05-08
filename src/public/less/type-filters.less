@@ -51,9 +51,11 @@
 	&:hover {
 		cursor: pointer;
 		.filter-type-icon {
-			font-size: 44px;
-			margin-top: -22px;
-			margin-left: -22px;
+			@media all and (min-width: 520px) {
+				font-size: 44px;
+				margin-top: -22px;
+				margin-left: -22px;
+			}
 		}
 		.all {
 			background-color: darken(#0088CC, 20%);
@@ -139,7 +141,7 @@
 
 .toggle-filters {
 	position: relative;
-	padding-top: 20px;
+	padding-top: 10px;
 }
 
 .hide-filters, .show-filters {
