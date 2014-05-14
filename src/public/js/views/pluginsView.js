@@ -5,7 +5,6 @@ define(["backbone", "handlebars", "js/hub", "templates"], function(Backbone, Han
         className: "plugins",
     
         initialize: function() {
-            console.log('view created');
             this.listenTo(Hub, "remove", this.remove);
             this.render();
         },

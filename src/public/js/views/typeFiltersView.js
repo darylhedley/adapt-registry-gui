@@ -29,24 +29,20 @@ define(function(require) {
 		},
 
 		hideFilter: function() {
-			console.log('hide-filters');
 			this.$el.addClass('display-none');
 		},
 
 		showFilter: function() {
-			console.log('show-filters');
 			this.$el.removeClass('display-none');
 		},
 
 		filterAll: function(event) {
 			event.preventDefault();
-			console.log('filter-all');
 			$('.plugin').removeClass('display-none');
 		},
 
 		filterThemes: function(event) {
 			event.preventDefault();
-			console.log('filter-themes');
 			$('.plugin')
 				.removeClass('display-none')
 				.not('.theme')
@@ -55,7 +51,6 @@ define(function(require) {
 
 		filterExtensions: function(event) {
 			event.preventDefault();
-			console.log('filter-extensions');
 			$('.plugin')
 				.removeClass('display-none')
 				.not('.extension')
@@ -64,7 +59,6 @@ define(function(require) {
 
 		filterComponents: function(event) {
 			event.preventDefault();
-			console.log('filter-components');
 			$('.plugin')
 				.removeClass('display-none')
 				.not('.component')
@@ -73,7 +67,6 @@ define(function(require) {
 
 		filterMenus: function(event) {
 			event.preventDefault();
-			console.log('filter-menus');
 			$('.plugin')
 				.removeClass('display-none')
 				.not('.menu')

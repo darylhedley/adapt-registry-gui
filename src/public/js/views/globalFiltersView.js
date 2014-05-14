@@ -26,12 +26,10 @@ define(function(require) {
         },
 
         hideFilter: function() {
-        	console.log('hide-filters');
         	this.$el.addClass('display-none');
         },
 
         showFilter: function() {
-        	console.log('show-filters');
         	this.$el.removeClass('display-none');
         },
 
