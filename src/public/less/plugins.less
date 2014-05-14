@@ -27,6 +27,33 @@
 			background-color: darken(#0088CC, 20%)
 		}
 	}
+	.plugin-type-icon.icon-tree {
+		display: none;
+	}
+	.plugin-type-icon.icon-paint-format {
+		display: none;
+	}
+	.plugin-type-icon.icon-cogs {
+		display: none;
+	}
+	.plugin-type-icon.icon-file {
+		display: none;
+	}
+	.plugin-type-icon.icon-powercord {
+		display: block;
+	}
+}
+
+.plugin.extension:hover { 
+	.plugin-type-icon.icon-tree {
+		margin-top: -25px;
+		margin-left: -21px;
+	}
+}
+.plugin.menu:hover { 
+	.plugin-type-icon.icon-file {
+		margin-left: -20px;
+	}
 }
 
 .plugin-inner {
@@ -43,6 +70,16 @@
 	border-radius: 20px 20px 0 0;
 }
 
+.plugin-type-icon {
+	position: absolute;
+	font-size: 34px;
+	color: white;
+	top: 50%;
+	left: 50%;
+	margin-top: -17px;
+	margin-left: -17px;
+}
+
 .plugin.theme {
 	.plugin-type-tab {
 		background-color: #FC6E51;
@@ -52,7 +89,23 @@
 			background-color: darken(#FC6E51, 20%);
 		}
 	}
+	.plugin-type-icon.icon-tree {
+		display: none;
+	}
+	.plugin-type-icon.icon-powercord {
+		display: none;
+	}
+	.plugin-type-icon.icon-cogs {
+		display: none;
+	}
+	.plugin-type-icon.icon-file {
+		display: none;
+	}
+	.plugin-type-icon.icon-paint-format {
+		display: block;
+	}
 }
+
 .plugin.extension {
 	.plugin-type-tab {
 		background-color: #AC92EC;
@@ -60,6 +113,25 @@
 	&:hover {
 		.plugin-type-tab {
 			background-color: darken(#AC92EC, 20%);
+		}
+	}
+	.plugin-type-icon.icon-powercord {
+		display: none;
+	}
+	.plugin-type-icon.icon-cogs {
+		display: none;
+	}
+	.plugin-type-icon.icon-file {
+		display: none;
+	}
+	.plugin-type-icon.icon-paint-format {
+		display: none;
+	}
+	.plugin-type-icon.icon-tree {
+		display: block;
+		@media all and (min-width: 520px) {
+			margin-top: -20px;
+			margin-left: -18px;
 		}
 	}
 }
@@ -72,6 +144,21 @@
 			background-color: darken(#FFCE54, 20%);
 		}
 	}
+	.plugin-type-icon.icon-tree {
+		display: none;
+	}
+	.plugin-type-icon.icon-powercord {
+		display: none;
+	}
+	.plugin-type-icon.icon-file {
+		display: none;
+	}
+	.plugin-type-icon.icon-paint-format {
+		display: none;
+	}
+	.plugin-type-icon.icon-cogs {
+		display: block;
+	}
 }
 .plugin.menu {
 	.plugin-type-tab {
@@ -81,6 +168,21 @@
 		.plugin-type-tab {
 			background-color: darken(#48CFAD, 20%);
 		}
+	}
+	.plugin-type-icon.icon-tree {
+		display: none;
+	}
+	.plugin-type-icon.icon-powercord {
+		display: none;
+	}
+	.plugin-type-icon.icon-cogs {
+		display: none;
+	}
+	.plugin-type-icon.icon-paint-format {
+		display: none;
+	}
+	.plugin-type-icon.icon-file {
+		display: block;
 	}
 }
 
@@ -102,16 +204,6 @@
 	left: 50%;
 	margin-left: -37px;
 	top: 10px;	
-}
-
-.plugin-type-icon {
-	position: absolute;
-	font-size: 34px;
-	color: white;
-	top: 50%;
-	left: 50%;
-	margin-top: -17px;
-	margin-left: -17px;
 }
 
 .plugin-name {

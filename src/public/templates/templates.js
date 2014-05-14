@@ -7,16 +7,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
   
 
 
-  return "<div class=\"global-filters-inner\">\n	<a class=\"global-filter-container\" href=\"#\">\n		<div class=\"global-filter-container-inner\">\n			<span class=\"global-filter-title icon-powercord\"> Plugins</span>\n		</div>\n	</a>\n\n    <a class=\"global-filter-container\" href=\"#/most-used\">\n		<div class=\"global-filter-container-inner\">\n			<span class=\"global-filter-title icon-download3\"> Most used</span>\n		</div>\n	</a>\n\n    <a class=\"global-filter-container\" href=\"#/most-starred\">\n		<div class=\"global-filter-container-inner\">\n			<span class=\"global-filter-title icon-star3\"> Most starred</span>\n		</div>\n	</a>\n\n    <a class=\"global-filter-container\" href=\"#/most-watched\">\n    	<div class=\"global-filter-container-inner\">\n			<span class=\"global-filter-title icon-eye\"> Most watched</span>\n		</div>\n	</a>\n	\n	<a class=\"global-filter-container\">\n		<input type=\"search\" name\"search_plugins\" placeholder=\"Search\" class=\"global-filter-search\">\n	</a>\n</div>";
-  });
-
-this["Handlebars"]["templates"]["navigation"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
-  this.compilerInfo = [4,'>= 1.0.0'];
-helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
-  
-
-
-  return "<div class=\"global-filters\">\n	\n</div>\n\n<div class=\"plugin-type-filters\">\n	\n	\n	<div class=\"hide-filters\"> > Hide filters</div>\n	<div class=\"show-filters\"> > Show filters</div>\n</div>\n";
+  return "<div class=\"global-filters-inner\">\n	<a class=\"global-filter-container\" href=\"#\">\n		<div class=\"global-filter-container-inner\">\n			<span class=\"global-filter-title icon-powercord\"> Plugins</span>\n		</div>\n	</a>\n\n    <a class=\"global-filter-container\" href=\"#/most-used\">\n		<div class=\"global-filter-container-inner\">\n			<span class=\"global-filter-title icon-download3\"> Most used</span>\n		</div>\n	</a>\n\n    <a class=\"global-filter-container\" href=\"#/most-starred\">\n		<div class=\"global-filter-container-inner\">\n			<span class=\"global-filter-title icon-star3\"> Most starred</span>\n		</div>\n	</a>\n\n    <a class=\"global-filter-container\" href=\"#/most-watched\">\n    	<div class=\"global-filter-container-inner\">\n			<span class=\"global-filter-title icon-eye\"> Most watched</span>\n		</div>\n	</a>\n	\n	<a class=\"global-filter-container\">\n		<div class=\"global-filter-search-inner\">\n			<input type=\"text\" name=\"search_plugins\" value=\"\" placeholder=\" Search\" class=\"global-filter-search\">\n			<button class=\"search-button icon-search\"></button>\n		</div>\n	</a>\n</div>";
   });
 
 this["Handlebars"]["templates"]["plugin"] = Handlebars.template(function (Handlebars,depth0,helpers,partials,data) {
@@ -77,7 +68,7 @@ function program1(depth0,data) {
   if (stack1 = helpers.type) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.type; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
-    + "\">\n    <div class=\"plugin-inner\">\n        <div class=\"plugin-type-tab\">\n        	<div class=\"plugin-type\">\n                <div class=\"plugin-type-icon icon-powercord\"></div>   \n            </div>\n            <div class=\"plugin-hits icon-download3\"> ";
+    + "\">\n    <div class=\"plugin-inner\">\n        <div class=\"plugin-type-tab\">\n        	<div class=\"plugin-type\">\n                <div class=\"plugin-type-icon icon-powercord\"></div> \n                <div class=\"plugin-type-icon icon-paint-format\"></div>   \n                <div class=\"plugin-type-icon icon-tree\"></div> \n                <div class=\"plugin-type-icon icon-cogs\"></div> \n                <div class=\"plugin-type-icon icon-file\"></div> \n            </div>\n            <div class=\"plugin-hits icon-download3\"> ";
   if (stack1 = helpers.hits) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.hits; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
