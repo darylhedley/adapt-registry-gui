@@ -5,7 +5,6 @@ define(["backbone", "handlebars", "js/hub", "templates"], function(Backbone, Han
         className: "plugins",
     
         initialize: function() {
-            console.log('view created');
             this.listenTo(Hub, "remove", this.remove);
             this.render();
         },
@@ -16,9 +15,9 @@ define(["backbone", "handlebars", "js/hub", "templates"], function(Backbone, Han
             this.$el.html(template({plugins:data})).appendTo("#wrapper");
             return this;
         }
-    
+
     });
-    
+
     return PluginsView;
 
 });

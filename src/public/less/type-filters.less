@@ -1,0 +1,176 @@
+.type-filters {
+	background-color: #F6F6F6;
+	padding-bottom: 25px;
+}
+
+.plugin-type-filters {
+	overflow: hidden;
+	background-color: #F6F6F6;
+}
+
+.plugin-type-filters-inner {
+	height: 110px;
+	max-width: 1024px;
+	margin: 0 auto;
+	@media all and (max-width: 520px) {
+		margin-left: 10px;
+	}
+
+}
+
+.filter-type-container {
+	position: relative;
+	float: left;
+	width: 20%;
+	text-decoration: none; 
+	text-align: center;
+	.all {
+		transition: background-color 0.8s ease;
+		background-color: #0088CC;
+	}
+
+	.theme {
+		transition: background-color 0.8s ease;
+		background-color: #FC6E51;
+	}
+
+	.extension {
+		transition: background-color 0.8s ease;
+		background-color: #AC92EC;
+		.filter-type-icon {
+			@media all and (min-width: 520px) {
+				margin-top: -20px;
+				margin-left: -18px;
+			}
+		}
+	}
+
+	.component {
+		transition: background-color 0.8s ease;
+		background-color: #FFCE54;
+	}
+
+	.menu {
+		transition: background-color 0.8s ease;
+		background-color: #48CFAD;
+	}
+	&:hover {
+		cursor: pointer;
+		.filter-type-icon {
+			@media all and (min-width: 520px) {
+				font-size: 44px;
+				margin-top: -22px;
+				margin-left: -22px;
+			}
+		}
+		.all {
+			background-color: darken(#0088CC, 20%);
+		}
+		.theme {
+			background-color: darken(#FC6E51, 20%);
+		}
+		.extension {
+			background-color: darken(#AC92EC, 20%);
+			.filter-type-icon {
+				@media all and (min-width: 520px) {
+					margin-top: -25px;
+				}
+			}
+		}
+		.component {
+			background-color: darken(#FFCE54, 20%);
+		}
+		.menu {
+			background-color: darken(#48CFAD, 20%);
+		}
+	}
+	&:selected {
+		.all {
+			background-color: darken(#0088CC, 30%);
+		}
+		.theme {
+			background-color: darken(#FC6E51, 30%);
+		}
+		.extension {
+			background-color: darken(#AC92EC, 20%);
+		}
+		.component {
+			background-color: darken(#FFCE54, 20%);
+		}
+		.menu {
+			background-color: darken(#48CFAD, 20%);
+		}
+	}
+}
+
+.filter-type-container-inner {
+	height: 70px;
+	padding: 20px 20px 10px 20px;
+	@media all and (max-width: 520px) {
+		padding-bottom: 0;
+	}
+}
+
+.filter-type {
+	width: 70px;
+	height: 70px;
+	background-color: #fff;
+	border-radius: 50px;
+	position: absolute;
+	left: 50%;
+	margin-left: -35px;
+	@media all and (max-width: 520px) {
+		margin: 0 10px;
+		height: 60px;
+		width: 60px;
+		margin-left: -35px;
+    }
+}
+
+
+.filter-type-icon {
+	position: absolute;
+	height: 34px;
+	width: 34px;
+	top: 50%;
+	left: 50%;
+	margin-top: -17px;
+	margin-left: -17px;
+	color: #fff;
+	font-size:34px;	
+}
+
+.filter-type-title {
+	transition: color 0.8s ease;
+	color: #999;
+	padding-bottom: 20px;
+	position: relative;
+	@media all and (max-width: 520px) {
+		font-size: 10px;
+	}		
+}
+
+.toggle-filters {
+	position: relative;
+	padding-top: 10px;
+}
+
+.hide-filters, .show-filters {
+	display: block;
+	margin-left: 30px;
+	color: #656D78;
+	font-size: 0.9em;
+	&:hover {
+		cursor: pointer;
+	}
+	@media all and (min-width: 631px) {
+		display: none;
+		padding: 20px;
+	}
+}
+
+.display-none {
+	display: none;
+}
+
+

@@ -11,7 +11,6 @@ define(["backbone", "handlebars", "js/hub", "templates"], function(Backbone, Han
         
         render: function() {
             var data = this.model.toJSON();
-            console.log(data);
             var template = Handlebars.templates["plugin"];
             this.$el.html(template(data)).appendTo("#wrapper");
             return this;

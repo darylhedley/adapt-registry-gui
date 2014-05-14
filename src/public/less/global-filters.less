@@ -1,0 +1,119 @@
+.global-filters {
+    background-color: #ccd1d925;
+    padding: 5px 0 6px;
+    width: 100%;
+    @media all and (max-width: 630px) {
+        padding: 10px 0 20px 0;
+        max-width: 630px;
+    }
+}
+
+.global-filters-inner {
+    width: 100%;
+    margin: auto;
+    max-width: 998px;
+    text-align: center;
+    @media all and (max-width: 630px) { 
+        padding-top: 10px;
+    }
+}
+
+.global-filter-container {
+    text-decoration: none; 
+    display: inline-block;
+    width: 18%;
+    @media all and (max-width: 630px) { 
+        width: 95%;
+    }
+}
+
+.global-filter-container-inner {
+     @media all and (max-width: 630px) {
+        width: 95%;
+        height: 25px;
+        border-radius: 20px;
+        background-color: #AAB2BD; 
+        margin: 0 0 10px 10px;
+        position: relative;
+        &:hover {
+            cursor: pointer;
+            background-color: #0088CC;
+        }
+    }
+}
+
+.global-filter-search-inner {
+     @media all and (max-width: 630px) {
+        width: 95%;
+        height: 25px;
+        border-radius: 20px;
+        margin: 0 0 10px 10px;
+        position: relative;
+    }
+}
+
+.global-filter-icon, .icon-search {
+    width: 24px;
+    height: 24px;
+    top: 50%;
+    margin-top: -14px;
+}
+
+.global-filter-title {
+    background-color: transparent;
+    text-decoration: none;
+    color: #1f1f1f;
+    font-size: 0.9em;
+    text-decoration: none;
+    line-height: 20px;
+    letter-spacing: 0.001em;
+    @media all and (min-width: 630px) {
+        &:hover {
+            cursor: pointer;
+            color: #0088CC;
+        }
+    }
+    @media all and (max-width: 630px) {
+        color: #fff;
+    }
+}
+
+input {
+    outline: none;
+    border-radius: 12px;
+    width: 80%;
+    height: 20px;
+    border: none;
+     &:hover {
+        cursor: pointer;
+    }   
+    @media all and (max-width: 630px) {
+        width: 85%;
+        height: 25px;
+    }
+}
+.search-button {
+    cursor: pointer;
+    width: 20%;
+    height: 20px;
+    border: 0;
+    background-color: transparent;
+    text-decoration: none;
+    &:hover {
+        cursor: pointer;
+        color: #0088CC; 
+    }
+    @media all and (min-width: 631px) {
+        display: none;
+    }
+}
+
+.icon-search {
+    width: 28px;
+    height: 28px;
+    color: #656D78;
+}
+
+
+
+

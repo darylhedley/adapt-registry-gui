@@ -1,14 +1,18 @@
 <div class="plugin">
     <div class="plugin-inner">
-        <div class="plugin-name">{{name}}</div>
-        <div class="plugin-description">
-        	{{description}}
+        <div class="plugin-type-tab">
+            <div class="plugin-stars">{{stargazers_count}}</div>
+            <div class="plugin-hits">{{hits}}</div>
         </div>
-        <div class="plugin-hits">{{hits}}</div>
-        <div class="plugin-stars">{{stargazers_count}}</div>
-        <a class="plugin-git">{{url}}</a>
-        <div class="plugin-created">{{createdAt}}</div>
-        <div class="plugin-updated">{{updatedAt}}</div>
-        <a href="{{html_url}}" target="_blank" class="plugin-url">{{html_url}}</a>
+        <div class="plugin-body-holder">
+            <div class="plugin-name">{{name}}</div>
+            <div class="plugin-description">
+            	{{description}}
+            </div>
+            <a class="plugin-git">{{url}}</a>
+            <div class="plugin-created">{{createdAt}}</div>
+            <div class="plugin-updated">{{updatedAt}}</div>
+            <a href="{{html_url}}" target="_blank" class="plugin-url">{{html_url}}</a>
+        </div>
     </div>    
 </div>
