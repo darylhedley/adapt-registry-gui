@@ -6,6 +6,10 @@ body {
     letter-spacing: 0.001em;
 }
 
+#wrapper {
+    position: relative;
+}
+
 .loading {
     position:fixed;
     width:100%;
@@ -21,41 +25,100 @@ body {
 
 .navigation {
     background: url('../images/top-nav-fade.gif') scroll repeat-x 0 0 white;
-    padding: 2px 0 3px;
+    position: relative;
+    &:hover {
+        @media all and (max-width: 700px) {
+            //height: 213px;
+        }
+    }
 }
 
-.navigation-inner {
-    top: 0;
+.navigation-bar {
+    top:0;
     width: 100%;
+    height: 25px;
     margin: auto;
     max-width: 998px;
-    a {
+    position: relative; 
+    @media all and (max-width: 700px) {
+        height: 100%;
+        min-height: 25px;
+    }
+}
+
+.mobile-menu-icon {
+    text-align: right;
+    right: 5px;
+    top:5px;
+    position: absolute;
+    color: #AAB2BD;
+    z-index: 1;
+    &:hover {
+        cursor: pointer;
+    }
+    @media all and (min-width: 701px) {
+        display: none;
+    }
+}
+
+.nav-adapt-logo {
+    left: 5px;
+    top: 7px;
+    text-align: left;
+    background-color: transparent;
+    position: absolute;
+    z-index: 1;
+}
+
+.menu-items-container {
+    top: 0;
+    left: 27px;
+    position: relative;
+    z-index: 1;
+    padding-bottom: 8px;
+    @media all and (max-width: 700px) {
+        top: 0;
+        left: 0;
+        padding-top: 25px;
+        width: 100%;
+        background-color: #f0f0f0;
+        z-index: 0;
+    }
+    .menu-item {
         text-align: left;
         background-color: transparent;
         text-decoration: none;
         color: #1f1f1f;
         font-size: 0.9em;
-        line-height: 20px;
+        line-height: 25px;
         letter-spacing: 0.001em;
         padding: 0 0.5%;
-        @media all and (max-width: 760px) {
-            font-size: 0.7em;
-        }
-        @media all and (max-width: 520px) {
-            font-size: 0.5em;
-            padding: 0 4px 0 4px;
-        }
+        position: relative;
         &:hover {
             text-decoration: underline;
+            @media all and (max-width: 700px) {
+                color: #fff;
+                background-color: #0088CC;
+                border-radius: 25px;
+                padding-right: 20px;
+                text-decoration: none;
+                .mobile-menu {
+                    color: #0088CC;
+                }
+            }
         }
-    }       
-}
-
-.nav-adapt-logo {
-    padding-left: 5px;
+        @media all and (max-width: 700px) {
+            display: block;
+            text-align: right;
+            margin: 0 8px 0 8px;
+            padding: 3px;
+            color: #AAB2BD;
+        }
+    } 
 }
 
 .page-header-banner {
+    position: relative;
     background-image: url('../images/adapt-header-1600.jpg');
     background-repeat: no-repeat;
     background-position:center;
@@ -66,7 +129,7 @@ body {
 }
 
 .page-header-banner-inner {
-    display: block;
+    position: relative;
     max-width: 998px;
     margin: 0 auto;
     padding: 0 10px 0 10px;
@@ -76,7 +139,7 @@ body {
 }
 
 .banner-adapt-logo {
-    position: absolute;
+    position: relative;
     @media all and (max-width: 900px) {
         width: 150px;  
     }
@@ -89,7 +152,8 @@ body {
 .adapt-title, .adapt-body {
     color: #fff;
     width: 100%;
-    display: inline-block;
+    position: absolute;
+    top: 0;
     font-weight: normal;
     font-size: 2.7em;
     line-height: 1.5em;
@@ -102,9 +166,12 @@ body {
         padding-top: 120px;
         font-size: 1.7em;
     }
+    @media all and (max-width: 550px) {  
+        left: 0;
+    }
 }
 
-h1.adapt-title span {
+.adapt-title span {
         background: url('../images/text-fade-bg.png') repeat-x scroll 0 0 transparent;
         padding: 0 0.3em 0.2em;
     }
@@ -116,8 +183,22 @@ h1.adapt-title span {
     opacity: 0.8;
     padding: 0.3em 0.2em;
     display: block;
-    top: 250px;
-     @media all and (max-width: 520px) {  
+    top: 200px;
+    max-width: 600px;
+    left: 50%;
+    margin-left: -300px;
+    text-align: center;
+     @media all and (max-width: 550px) {  
         font-size: 0.7em;
+        position: relative;
+        min-width: 250px;
+        margin-left: 0;
+        left: 0;
+        top: 40px;
+    }
+}
+.menu-closed {
+    @media all and (max-width: 700px) {
+        display: none;
     }
 }

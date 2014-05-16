@@ -1,15 +1,29 @@
-define(["backbone", "handlebars"], function(Backbone, Handlebars) {
+define(function(require) {
+
+    var Backbone = require('backbone');
 
     var NavigationView = Backbone.View.extend({
-    
+
+        el:".navigation",
+
         initialize: function() {
-            this.render();
         },
-        
-        render: function() {
-            var template = Handlebars.templates["navigation"];
-            this.$el.html(template()).appendTo("#wrapper");
-            return this;
+
+        events: {
+            "click .mobile-menu-icon": "slideMenu"
+        },
+
+        slideMenu: function() {
+            console.log('slide menu event');
+            var $menuItems = this.$('.menu-items-container');
+
+            $menuItems.toggleClass('menu-closed');
+
+                // if(!$menuItems.hasClass('menu-closed')) {
+                //     return;
+                // } else if($menuItems.hasClass('menu-closed')) {
+                //     $menuItems.slideDown(800).removeClass('menu-closed');
+                // };
         }
         
     });
