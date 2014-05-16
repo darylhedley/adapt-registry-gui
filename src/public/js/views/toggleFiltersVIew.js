@@ -8,6 +8,7 @@ define(function(require) {
 
 		el:".toggle-filters",
 
+
 		events: {
 			"click .hide-filters": "hideFilters",
 			"click .show-filters": "showFilters"
