@@ -63,6 +63,8 @@ require([
         $('.loading').fadeOut();
         Backbone.history.start();
     });
+
+    Hub.trigger('plugins:loaded');
     
     Hub.plugins = new Plugins();
     
