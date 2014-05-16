@@ -9,6 +9,7 @@
 	float: left;
 	margin-top: 10px;
 	width: 33%;
+	min-width: 300px;
 	@media all and (max-width: 760px) {
 		width: 50%; 
 	}
@@ -237,10 +238,24 @@
 
 .git-hub-author {
 	position: absolute;
-	color: #434A54; 
-	font-size: 12px;
-	bottom: 25px;
+	bottom: 15px;
 	left: 20px;
+	text-decoration: none;
+}
+.git-hub-avatar {
+	width: 35px;
+}
+.git-hub-user {
+	font-size: 16px;
+	text-decoration: none;
+	color: #434A54;
+	text-align: left;
+	position: relative;
+	top: -11px;
+	display: inline;
+	&:hover {
+		text-decoration: underline;
+	}
 }
 
 .git-hub-link {

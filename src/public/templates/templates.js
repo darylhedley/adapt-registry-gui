@@ -63,7 +63,7 @@ helpers = this.merge(helpers, Handlebars.helpers); data = data || {};
 
 function program1(depth0,data) {
   
-  var buffer = "", stack1;
+  var buffer = "", stack1, stack2;
   buffer += "\n<div class=\"plugin ";
   if (stack1 = helpers.type) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
   else { stack1 = depth0.type; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
@@ -85,10 +85,16 @@ function program1(depth0,data) {
   else { stack1 = depth0.description; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
   buffer += escapeExpression(stack1)
     + "\n            </div>\n            "
-    + "\n            <div class=\"git-hub-footer\">\n                <div class=\"git-hub-author\">GitHub Author</div>\n                <a href=\"";
-  if (stack1 = helpers.html_url) { stack1 = stack1.call(depth0, {hash:{},data:data}); }
-  else { stack1 = depth0.html_url; stack1 = typeof stack1 === functionType ? stack1.apply(depth0) : stack1; }
-  buffer += escapeExpression(stack1)
+    + "\n            <div class=\"git-hub-footer\">\n                <a href=\""
+    + escapeExpression(((stack1 = ((stack1 = depth0.owner),stack1 == null || stack1 === false ? stack1 : stack1.url)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\" class=\"git-hub-author\">\n                    <img src=\""
+    + escapeExpression(((stack1 = ((stack1 = depth0.owner),stack1 == null || stack1 === false ? stack1 : stack1.avatar)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "\" class=\"git-hub-avatar\"/>\n                    <div class=\"git-hub-user\">"
+    + escapeExpression(((stack1 = ((stack1 = depth0.owner),stack1 == null || stack1 === false ? stack1 : stack1.username)),typeof stack1 === functionType ? stack1.apply(depth0) : stack1))
+    + "</div>\n                </a>\n                <a href=\"";
+  if (stack2 = helpers.html_url) { stack2 = stack2.call(depth0, {hash:{},data:data}); }
+  else { stack2 = depth0.html_url; stack2 = typeof stack2 === functionType ? stack2.apply(depth0) : stack2; }
+  buffer += escapeExpression(stack2)
     + "\" class=\"git-hub-link icon-github3\"> \n                    <span class=\"git-hub-link-inner\">GitHub</span>\n                </a>\n            </div>\n        </div>\n    </div>    \n</div>\n";
   return buffer;
   }

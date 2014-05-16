@@ -20,7 +20,10 @@
             {{!--<a class="plugin-git">{{url}}</a>
             <a href="{{html_url}}" target="_blank" class="plugin-url">{{html_url}}</a>--}}
             <div class="git-hub-footer">
-                <div class="git-hub-author">GitHub Author</div>
+                <a href="{{owner.url}}" class="git-hub-author">
+                    <img src="{{owner.avatar}}" class="git-hub-avatar"/>
+                    <div class="git-hub-user">{{owner.username}}</div>
+                </a>
                 <a href="{{html_url}}" class="git-hub-link icon-github3"> 
                     <span class="git-hub-link-inner">GitHub</span>
                 </a>
