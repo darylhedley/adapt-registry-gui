@@ -145,7 +145,7 @@ input.global-filter-search{outline:none;border-radius:12px;width:80%;height:20px
 
 body{margin:0;padding:0;background-color:#CCD1D9;font-family:'Raleway',verdana,arial,sans-serif;letter-spacing:0.001em}
 #wrapper{position:relative}
-.loading{position:fixed;width:100%;height:100%;top:0;left:0;color:#fff;background-color:#242424;text-align:center;padding-top:45%;display:none!important}
+.loading{position:fixed;width:100%;height:100%;top:0;left:0;color:#fff;background-color:#242424;text-align:center;padding-top:45%}
 .navigation{background:url('../images/top-nav-fade.gif') scroll repeat-x 0 0 #fff;position:relative}@media all and (max-width:700px){}
 .navigation-bar{top:0;width:100%;height:25px;margin:auto;max-width:998px;position:relative}@media all and (max-width:700px){.navigation-bar{height:100%;min-height:25px}}
 .mobile-menu-icon{text-align:right;right:5px;top:5px;position:absolute;color:#AAB2BD;z-index:1}.mobile-menu-icon:hover{cursor:pointer}
