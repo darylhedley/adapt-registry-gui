@@ -52,13 +52,17 @@ var getGithubDetail = function(callback) {
     var bowerDetailsCount = 0;
     _.each(jsonData, function(plugin, index) {
         var currentUser = plugin.url.split('/')[3];
-        var currentPluginName = plugin.name;
+        var currentPluginName = plugin.url.split('/')[4];
+        currentPluginName = currentPluginName.split('.')[0];
+        console.log(currentUser, currentPluginName);
         github.repos.get({
             user: currentUser,
             repo: currentPluginName 
         }, function(err, response) {
             githubDetailsCount++;
+            console.log(response);
             if (err) {
+                jsonData[index].owner = undefined;
                 jsonData[index].stargazers_count = undefined;
                 jsonData[index].html_url = undefined;
                 jsonData[index].description = undefined;
@@ -68,6 +72,10 @@ var getGithubDetail = function(callback) {
                 jsonData[index].subscribers_count = undefined;
 
             } else {
+                jsonData[index].owner = {};
+                jsonData[index].owner.username = response.owner.login;
+                jsonData[index].owner.avatar = response.owner.avatar_url;
+                jsonData[index].owner.url = response.owner.html_url;
                 jsonData[index].stargazers_count = response.stargazers_count;
                 jsonData[index].html_url = response.html_url;
                 jsonData[index].description = response.description;
