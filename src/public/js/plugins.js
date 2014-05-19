@@ -4,7 +4,6 @@ define([
     "js/hub"
 ], function(_, Backbone, Hub) {
     
-    console.log(Backbone)
     var Plugins = Backbone.Collection.extend({
         
         initialize: function() {
@@ -22,7 +21,6 @@ define([
         url:'api/plugins',
         
         collectionLoaded: function() {
-            console.log('collection', this);
             Hub.trigger('plugins:loaded');
         }
         

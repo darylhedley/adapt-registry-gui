@@ -14,9 +14,9 @@ define(function(require) {
         },
 
         slideMenu: function() {
-            console.log('slide menu event');
-            var $menuItems = this.$('.mobile-menu-items-container');
 
+            var $menuItems = this.$('.mobile-menu-items-container');
+            //toggle class of 'menu-close' on menu items
             $menuItems.toggleClass('menu-closed');
         }
         

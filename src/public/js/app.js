@@ -50,21 +50,22 @@ require([
     "js/router",
     "handlebars"
 ], function (NavigationView, GlobalFiltersView, TypeFiltersView, ToggleFiltersView, Plugins, Hub, Router) {
-    console.log('Running');
     
     new Router();
     new NavigationView();
     new GlobalFiltersView();
     new TypeFiltersView();
     new ToggleFiltersView();
+
+    $('.loading').animate({opacity:1, top:0});
     
     Hub.once('plugins:loaded', function() {
-        console.log('plugins loaded');
-        $('.loading').fadeOut();
-        Backbone.history.start();
+        $('.loading').animate({opacity:0, top:'-20px'}, function() {
+            $(this).hide();
+            Backbone.history.start();
+            Hub.trigger('plugins:show');
+        });
     });
-
-    Hub.trigger('plugins:loaded');
     
     Hub.plugins = new Plugins();
     

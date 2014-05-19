@@ -4,7 +4,7 @@
 * Maintainers - Daryl Hedley
 */
 
-define(["backbone", "js/hub", "views/pluginsView", "views/pluginView"], function(Backbone, Hub, PluginsView, PluginView) {
+define(["backbone", "js/hub", "views/pluginsView"], function(Backbone, Hub, PluginsView) {
 
     var Router = Backbone.Router.extend({
     
